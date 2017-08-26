@@ -17,11 +17,8 @@ package org.springframework.social.quickstart.config;
 
 import javax.sql.DataSource;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.*;
 import org.springframework.context.annotation.ComponentScan.Filter;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseFactory;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -37,6 +34,7 @@ import org.springframework.social.connect.jdbc.JdbcUsersConnectionRepository;
 @Configuration
 @ComponentScan(basePackages = "org.springframework.social.quickstart", excludeFilters = { @Filter(Configuration.class) })
 @PropertySource("classpath:application.properties")
+@ImportResource("classpath:h2.xml")
 public class MainConfig {
 
 	@Bean(destroyMethod = "shutdown")
