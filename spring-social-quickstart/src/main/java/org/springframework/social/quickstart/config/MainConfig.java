@@ -39,6 +39,7 @@ public class MainConfig {
 
 	@Bean(destroyMethod = "shutdown")
 	public DataSource dataSource() {
+		// How to access.   http://localhost:8082/   JDBC URL: jdbc:h2:mem:spring-social-quickstart
 		EmbeddedDatabaseFactory factory = new EmbeddedDatabaseFactory();
 		factory.setDatabaseName("spring-social-quickstart");
 		factory.setDatabaseType(EmbeddedDatabaseType.H2);
